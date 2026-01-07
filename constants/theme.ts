@@ -1,48 +1,49 @@
+import { Platform } from "react-native";
+
 /**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
+ * Centralized theme for the app
+ * Includes colors, fonts, and welcome screen constants
  */
-
-import { Platform } from 'react-native';
-
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
 
 export const Colors = {
   light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
+    background: "#f3e8ff",      // light purple background
+    text: "#4b0082",            // dark purple text
+    progressBar: "#9b59b6",     // bright purple
+    progressTrack: "#d8b4fe",   // light purple track
+    tick: "#f8c8dc",            // pink tick
+    icon: "#6b46c1",
+    tabIconDefault: "#6b46c1",
+    tabIconSelected: "#9b59b6",
+    selectedText: "#f3e8ff",
+    selectedTextOnDark: "#1e0f3c",
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    background: "#1e0f3c",      // dark purple background
+    text: "#e0c3fc",            // light purple text
+    progressBar: "#9b59b6",     // bright purple
+    progressTrack: "#3b0d5c",   // darker purple track
+    tick: "#f8c8dc",            // pink tick
+    icon: "#d3b4f1",
+    tabIconDefault: "#9b59b6",
+    tabIconSelected: "#f8c8dc",
+    selectedText: "#1e0f3c",
+    selectedTextOnDark: "#1e0f3c",
   },
 };
 
 export const Fonts = Platform.select({
   ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
-    sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
-    serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
-    rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
-    mono: 'ui-monospace',
+    sans: "system-ui",
+    serif: "ui-serif",
+    rounded: "ui-rounded",
+    mono: "ui-monospace",
   },
   default: {
-    sans: 'normal',
-    serif: 'serif',
-    rounded: 'normal',
-    mono: 'monospace',
+    sans: "normal",
+    serif: "serif",
+    rounded: "normal",
+    mono: "monospace",
   },
   web: {
     sans: "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
@@ -51,3 +52,14 @@ export const Fonts = Platform.select({
     mono: "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
   },
 });
+
+/**
+ * Welcome screen constants
+ */
+export const Welcome = {
+  logoText: "Smart Todo",
+  subtitle: "Getting things ready…",
+  progressBarHeight: 8,
+  tickSize: 28,
+  progressDuration: 3000, // progress bar animation duration in ms
+};
